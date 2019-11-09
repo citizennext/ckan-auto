@@ -1,0 +1,17 @@
+---
+# copyright Utrecht University
+
+# EPOS-MSL configuration
+epos_msl_version: development      # EPOS-MSL version to install
+epos_msl_fqdn: epos-msl.ckan.test  # EPOS-MSL fully qualified domain name (FQDN)
+
+# OpenSSL configuration.
+openssl_private_dir: '/etc/pki/tls/private'
+openssl_certs_dir: '/etc/pki/tls/certs'
+openssl_key_signed: localhost.key
+openssl_crt_signed: localhost.crt
+
+# CKAN extension verions
+ckanext_harvest_version: 7dd82a0e01ba85b7f2f4cc02b66dd4948ed7093e
+ckanext_oaipmh_version: 123aec59231dabea9b776063502131606a15f8c1
+ckanext_custom_theme_version: '{{ epos_msl_version }}'

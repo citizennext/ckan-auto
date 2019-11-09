@@ -1,0 +1,23 @@
+---
+# copyright Utrecht University
+# This playbook deploys a complete EPOS-MSL CKAN instance.
+
+- name: Jenkins provisioning
+  hosts: "{{ target }}"
+  become: true
+
+  vars_files:
+    - secrets/demo.yml
+    - vars/demo.yml
+
+  roles:
+    - common
+    - certificates
+    - apache
+    - php
+    - postgresql
+    - solr
+    - redis
+    - ckan
+    - ckan-harvester
+    - certbot
