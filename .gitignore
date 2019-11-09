@@ -5,5 +5,7 @@
 *.retry
 .vaultpw
 
+/.idea
+
 # Vagrant stuff
 /.vagrant
