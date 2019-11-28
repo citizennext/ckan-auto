@@ -312,8 +312,9 @@
   become: yes
   shell: |
     . /usr/lib/ckan/default/bin/activate
-    cd /usr/lib/ckan/default/src/ckan
-    paster --plugin=ckan --config=/etc/ckan/default/{{ epos_msl_environment }}.ini create-test-data translations
+    #cd /usr/lib/ckan/default/src/ckan
+    cd /etc/ckan/default
+    paster --plugin=ckan create-test-data translations
     exit
   changed_when: False
 
