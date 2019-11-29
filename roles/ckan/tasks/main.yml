@@ -236,7 +236,7 @@
     cd /usr/lib/ckan
     . default/bin/activate
     #cd default/src/ckanext-custom-theme
-    pip install -e git+https://github.com/citizennext/ckanext-datagovtheme.git@{{ ckanext_custom_theme_version }}#ckanext-datagovtheme
+    pip install -e git+https://github.com/citizennext/ckanext-datagovtheme.git@{{ ckanext_custom_theme_version }}#egg=ckanext-datagovtheme
     #pip install .
     exit
   #git:
