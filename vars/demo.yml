@@ -1,5 +1,6 @@
 ---
-epos_msl_version: v0.4.0
+#epos_msl_version: v0.4.0
+epos_msl_version: rpm-276
 epos_msl_fqdn: albaiulia.opencity.ro
 epos_msl_environment: development
 
