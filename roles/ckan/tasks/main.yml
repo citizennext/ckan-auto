@@ -237,6 +237,14 @@
     version: master
   notify: Restart Apache webserver
 
+- name: Run pip install for the theme
+  shell: |
+    su -s /bin/bash - ckan
+    cd /usr/lib/ckan
+    . default/bin/activate
+    cd default/src/ckanext-custom-theme
+    pip install .
+    exit
 
 - name: Ensure latest version of GSA datagovtheme custom CKAN theme is installed
   become_user: root
