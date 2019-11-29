@@ -257,7 +257,7 @@
     paster db init -c /etc/ckan/default/{{ epos_msl_environment }}.ini
     paster --plugin=ckanext-harvest harvester initdb --config=/etc/ckan/default/{{ epos_msl_environment }}.ini
     exit
-  when: ckan_installed.changed
+  #when: ckan_installed.changed
 
 
 - name: Check if CKAN admin user exists
