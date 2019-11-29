@@ -1,6 +1,6 @@
 ---
 epos_msl_version: v0.4.0
-epos_msl_fqdn: opendata-albaiulia.civictech.ro
+epos_msl_fqdn: albaiulia.opencity.ro
 epos_msl_environment: development
 
 certbot_generate_certificates: true
@@ -11,4 +11,4 @@ certbot_register_email: !vault |
           38373431313232353139343861383335363032353139383238323463383530326666646539383762
           6465383437643662380a343533313865313236636635653362633066363562336634306435376263
           31653532323637623962343031623061356362386466333133666236653132383635
-certbot_certificate_domains: opendata-albaiulia.civictech.ro
+certbot_certificate_domains: albaiulia.opencity.ro
