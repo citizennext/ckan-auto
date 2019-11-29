@@ -257,7 +257,7 @@
     paster db init -c /etc/ckan/default/{{ epos_msl_environment }}.ini
     paster --plugin=ckanext-harvest harvester initdb --config=/etc/ckan/default/{{ epos_msl_environment }}.ini
     exit
-  #when: ckan_installed.changed
+  when: ckan_installed.changed
 
 
 - name: Check if CKAN admin user exists
@@ -317,6 +317,7 @@
     paster --plugin=ckan create-test-data translations
     exit
   changed_when: False
+  when: ckan_installed.changed
 
 - name: Ensure WSGI specification for CKAN is present
   template:
