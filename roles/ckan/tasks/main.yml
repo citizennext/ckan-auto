@@ -239,6 +239,18 @@
     exit
   notify: Restart Apache webserver
 
+- name: Install geospatial prereq 2 for theme - possible geodatagov plugin
+  become_user: root
+  become: yes
+  shell: |
+    su -s /bin/bash - ckan
+    cd /usr/lib/ckan
+    . default/bin/activate
+    pip install -e git+https://github.com/GSA/ckanext-geodatagov.git#egg=ckanext-geodatagov
+    pip install -r /usr/lib/ckan/default/src/ckanext-geodatagov/pip-requirements.txt
+    exit
+  notify: Restart Apache webserver
+
 - name: Install GSA datagovtheme custom CKAN theme
   become_user: root
   become: yes
