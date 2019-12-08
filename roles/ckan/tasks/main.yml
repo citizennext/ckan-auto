@@ -228,23 +228,25 @@
   notify: Restart Apache webserver
 
 
-- name: Install GSA datagovtheme custom CKAN theme
+- name: Install EPOS-MSL custom CKAN theme
   become_user: root
   become: yes
-  git:
-    repo: 'https://github.com/citizennext/ckanext-datagovtheme.git'
-    dest: /usr/lib/ckan/default/src/ckanext-custom-theme/
-    version: master
-  notify: Restart Apache webserver
+  shell: |
+    su -s /bin/bash - ckan
+    cd /usr/lib/ckan
+    . default/bin/activate
+    pip install -e git+https://github.com/UtrechtUniversity/epos-msl-theme.git@{{ ckanext_custom_theme_version }}#egg=ckanext-custom_theme
+    exit
+    creates=/usr/lib/ckan/default/src/ckanext-custom-theme/
 
 
 - name: Ensure latest version of GSA datagovtheme custom CKAN theme is installed
   become_user: root
   become: yes
   git:
-    repo: 'https://github.com/citizennext/ckanext-datagovtheme.git'
-    dest: /usr/lib/ckan/default/src/ckanext-custom-theme/
-    version: master
+    repo: "https://github.com/UtrechtUniversity/epos-msl-theme.git"
+    dest: "/usr/lib/ckan/default/src/ckanext-custom-theme/"
+    version: "{{ ckanext_custom_theme_version }}"
     update: "yes"
 
 
