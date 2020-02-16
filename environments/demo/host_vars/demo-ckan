@@ -4,6 +4,6 @@
 ########################
 # Ansible configuration
 ########################
-ansible_host: 18.184.97.18                       # EPOS-MSL host
+ansible_host: 40.114.248.157                       # EPOS-MSL host
 ansible_user: jenkins                             # Administrative user on instance for Ansible
 ansible_ssh_private_key_file: ~/.ssh/id_rsa # Path to private key file of administrative user
